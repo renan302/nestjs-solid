@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
-import { CustomerController } from './controller/customer.controller';
-import { CustomerRepository } from './infra/customer.repository';
-import { CustomerService } from './service/customer.service';
+import { CustomerController } from './customer.controller';
+import { CustomerMockRepository } from './repositories/customer.mock.repository';
+import { CreateService } from './applications/create/create.service';
+import { FindAllService } from './applications/find-all/find-all.service';
+
+const customerMockRepository = {
+  provide: 'CustomerMockRepository',
+  useClass: CustomerMockRepository
+};
 
 @Module({
   controllers: [CustomerController],
-  providers: [CustomerService, CustomerRepository]
+  providers: [customerMockRepository, CreateService, FindAllService]
 })
 export class CustomerModule {}
