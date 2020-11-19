@@ -3,7 +3,7 @@ import { Customer } from '../../domains/customer.model';
 import { ICustomerRepository } from '../../interfaces/customer.repository.interface';
 
 @Injectable()
-export class FindAllApplication {
+export class FindAllApplicationService {
 
     constructor(@Inject('CustomerMockRepository') 
     private customerMockRepository : ICustomerRepository)

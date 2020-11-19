@@ -4,7 +4,7 @@ import { ICustomerRepository } from '../../interfaces/customer.repository.interf
 import { CustomerCreateDTO } from './customer-create.dto';
 
 @Injectable()
-export class CreateApplication {
+export class CreateApplicationService {
 
     constructor(
     @Inject('CustomerMockRepository') 
