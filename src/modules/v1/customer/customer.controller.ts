@@ -12,12 +12,13 @@ export class CustomerController {
     
     @Post()        
     async create(@Body() customer : CustomerCreateDTO) : Promise<void>{   
-        console.log(customer);
+        console.log(process.env.CONFIG);
         return await this.createApplicationService.execute(customer);
     }
 
     @Get()
     async findAll() : Promise<Array<Customer>>{
+        console.log(process.env.CONFIG);
         return await this.findAllApplicationService.execute();
     }
 
